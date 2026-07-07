@@ -1,0 +1,26 @@
+# build artifacts
+node_modules/
+.next/
+out/
+.netlify/
+.playwright-mcp/
+.playwright-cli/
+
+# internal working notes — never publish
+wiki-*.md
+canonical-docs.md
+contribution-backlog.md
+x-comet-research-notes.md
+wiki-config.json
+site/
+output/
+benchmarks/
+build-and-run/
+devrel-playbooks/
+ecosystem-map/
+governance/
+start-here/
+scripts/build-static-site.py
+scripts/build-web.sh
+scripts/verify-static-site.py
+*.png
