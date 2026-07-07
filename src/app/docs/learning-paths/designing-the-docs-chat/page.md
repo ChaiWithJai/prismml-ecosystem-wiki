@@ -43,7 +43,7 @@ The behavior we kept is the one support bots are judged on: across every run, th
 
 ## Reuse the pattern
 
-The whole agent is three static files: the docs bundle ([/llms-full.txt](https://prismml-ecosystem-wiki.netlify.app/llms-full.txt)) that the site already generates for coding agents, a web worker that loads the ONNX model over WebGPU, and a page that does keyword retrieval in a few dozen lines of JavaScript. No framework, no vector database, no server. If your docs already ship an llms-full.txt, you are one worker file away from the same feature.
+The whole agent is three static files: the docs bundle ([/llms-full.txt](https://yourwildcard.ai/llms-full.txt)) that the site already generates for coding agents, a web worker that loads the ONNX model over WebGPU, and a page that does keyword retrieval in a few dozen lines of JavaScript. No framework, no vector database, no server. If your docs already ship an llms-full.txt, you are one worker file away from the same feature.
 
 ## Next steps
 

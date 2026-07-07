@@ -18,7 +18,7 @@ PrismML is a family of small open-weight language models, and Bonsai is its 8B f
 
 ## Choose how you connect
 
-- **With a coding agent.** Point Claude Code, Cursor, or any agent at [/llms.txt](https://prismml-ecosystem-wiki.netlify.app/llms.txt); every page is raw Markdown if you append `.md` to its URL. [Use these docs with AI](/docs/start-here/use-with-ai) has a paste-ready starting prompt.
+- **With a coding agent.** Point Claude Code, Cursor, or any agent at [/llms.txt](https://yourwildcard.ai/llms.txt); every page is raw Markdown if you append `.md` to its URL. [Use these docs with AI](/docs/start-here/use-with-ai) has a paste-ready starting prompt.
 - **By hand.** Start with the [llama.cpp recipe](/docs/build-and-run/bonsai-llamacpp) and you will have a local model answering prompts in minutes.
 
 ## What you will be able to do

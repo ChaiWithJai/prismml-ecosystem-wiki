@@ -5,7 +5,7 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 
-const SITE_URL = process.env.SITE_URL || 'https://prismml-ecosystem-wiki.netlify.app'
+const SITE_URL = process.env.SITE_URL || 'https://yourwildcard.ai'
 const ROOT = process.cwd()
 const OUT = join(ROOT, 'out')
 

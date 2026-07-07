@@ -3,4 +3,4 @@ Allow: /
 
 Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
-Sitemap: https://prismml-ecosystem-wiki.netlify.app/sitemap.xml
+Sitemap: https://yourwildcard.ai/sitemap.xml
