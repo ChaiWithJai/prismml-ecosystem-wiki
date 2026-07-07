@@ -50,6 +50,7 @@ The ideas under every inference decision, from the KV cache to quantization.
 
 The runtimes, engines, and platforms that serve small models, compared honestly.
 
+- [Does the 1-bit Bonsai whitepaper prove the efficiency thesis this wiki is built on?](/blog/bonsai-whitepaper-and-the-efficiency-thesis)
 - [What do FlashAttention and PagedAttention actually optimize?](/blog/flashattention-vs-pagedattention)
 - [How do I benchmark an LLM server properly?](/blog/how-to-benchmark-an-llm-server)
 - [Ollama vs llama.cpp — which should I use for local inference?](/blog/ollama-vs-llama-cpp)
