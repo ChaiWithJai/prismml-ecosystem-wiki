@@ -1,11 +1,11 @@
 ---
 title: KV Cache
-status: migrated
+status: published
 audience: DevRel engineer
 owner: Technical writer
 source_tier: course_material
 benchmark_status: not_run
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 The KV cache is the block of memory where a language model stores the keys and values it has already computed for past tokens, so it does not recompute them for every new token. On this page you will learn why the cache exists, how to estimate its size for a given model and context length, and why a small weight file can still use gigabytes of memory at long context. {% .lead %}

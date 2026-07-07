@@ -1,11 +1,11 @@
 ---
 title: Kernel Reading
-status: migrated
+status: published
 audience: DevRel engineer
 owner: Runtime educator
 source_tier: course_material
 benchmark_status: inspectable
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 Kernel reading means opening the runtime source code and tracing what a compute kernel actually does with a model's weights. {% .lead %}

@@ -5,7 +5,7 @@ audience: DevRel engineer
 owner: Runtime validator
 source_tier: primary_links
 benchmark_status: partial
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 Bonsai is PrismML's 8B open-weight language model, and llama.cpp is a C++ runtime that runs models like it on a laptop or a single GPU. On this page you can build llama.cpp, load the Bonsai GGUF file, and run your first prompt locally. {% .lead %}

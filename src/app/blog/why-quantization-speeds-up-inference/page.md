@@ -5,8 +5,8 @@ audience: inference-engineer
 pillar: foundational-concept
 book: inference-engineering
 chapter_ref: "Ch. 5, sec. 5.1 (p. 120)"
-status: draft
-last_reviewed: 2026-07-06
+status: published
+last_reviewed: 2026-07-07
 ---
 
 Halving precision doubles the effective Tensor Core FLOPS for compute-bound prefill, and it doubles the effective memory bandwidth for memory-bound decode. It is one lever that pulls both phases at once. Overhead means real gains run 30 to 50 percent per precision step, not the theoretical 2x, which is why benchmarks never match the spec-sheet math. {% .lead %}

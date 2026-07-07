@@ -5,8 +5,8 @@ audience: researcher
 pillar: foundational-concept
 book: inference-engineering
 chapter_ref: "Ch. 1, secs. 1.3-1.3.2 (pp. 31-33)"
-status: draft
-last_reviewed: 2026-07-06
+status: published
+last_reviewed: 2026-07-07
 ---
 
 All else equal, smaller models are always faster and cheaper, so choosing the smallest model that passes your evals beats any runtime trick. A model swap can outdo months of kernel work, which makes eval design upstream of every serving decision and the highest-leverage skill in the stack. {% .lead %}

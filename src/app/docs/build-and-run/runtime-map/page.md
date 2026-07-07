@@ -1,11 +1,11 @@
 ---
 title: Runtime Map
-status: draft
+status: published
 audience: DevRel engineer
 owner: Runtime validator
 source_tier: mixed
 benchmark_status: not_run
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 A runtime is the program that loads a PrismML model's weights and generates text on your hardware, e.g., llama.cpp on a laptop. Use this page to pick the runtime that fits your machine and jump to the steps for running it. {% .lead %}

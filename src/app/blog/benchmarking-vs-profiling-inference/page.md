@@ -5,7 +5,7 @@ audience: researcher
 pillar: ecosystem-player
 book: inference-engineering
 chapter_ref: "Ch. 4, sec. 4.5.3 Profiling Performance"
-status: draft
+status: published
 last_reviewed: 2026-07-07
 ---
 

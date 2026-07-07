@@ -5,8 +5,8 @@ audience: inference-engineer
 pillar: ecosystem-player
 book: transcript-theme
 chapter_ref: "Theme 2: end users vs ecosystem members; Kiely Ch. 0 tooling layer"
-status: draft
-last_reviewed: 2026-07-06
+status: published
+last_reviewed: 2026-07-07
 ---
 
 Ollama and llama.cpp sit on different layers of the same stack, so this is not a fair fight between two rivals. llama.cpp is the runtime that loads a GGUF file and produces tokens. Ollama is tooling wrapped around that runtime, and it adds model management, an API server, and defaults that work without tuning. Ship a feature with Ollama. Tune flags, quantization formats, or benchmarks with llama.cpp directly. Most of the debate comes from layer confusion, not from a capability gap. {% .lead %}

@@ -1,11 +1,11 @@
 ---
 title: Device Benchmark Schema And Task Suite
-status: draft
+status: published
 audience: Benchmark contributor
 owner: Benchmark owner
 source_tier: internal_standard
 benchmark_status: not_run
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 A device report is a record of one benchmark run. It captures which model you ran, on which machine, with which runtime, and how fast it went, so that someone else can compare your numbers with theirs or repeat the run. On this page you can copy the report format, pick a standard task to measure, and learn how to mark what your row does and does not prove. {% .lead %}

@@ -5,8 +5,8 @@ audience: ml-product-team
 pillar: end-user-case-study
 book: transcript-theme
 chapter_ref: "Theme 3: How regulated end users evaluate local AI"
-status: draft
-last_reviewed: 2026-07-06
+status: published
+last_reviewed: 2026-07-07
 ---
 
 The order of evaluation is the surprise. A hospital CTO asks about risk first, e.g., where patient data lives and who is liable when the model fails. Feasibility comes second, meaning whether the model runs on hardware the hospital can own with the staff it already has. Features come last. A pitch that opens with capability answers the third question before the buyer has asked the first, and that is why demos alone stall. {% .lead %}

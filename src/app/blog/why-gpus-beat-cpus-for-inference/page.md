@@ -5,8 +5,8 @@ audience: inference-engineer
 pillar: foundational-concept
 book: inference-engineering
 chapter_ref: "Ch. 3, sec. 3.1 GPU Architecture"
-status: draft
-last_reviewed: 2026-07-06
+status: published
+last_reviewed: 2026-07-07
 ---
 
 GPUs are throughput machines. They apply one uniform operation across thousands of independent data elements at once, and that is exactly the shape of inference's vector and matrix math. CPUs optimize for low latency on branching, sequential work. This mental model predicts which parts of your workload belong on each processor. {% .lead %}

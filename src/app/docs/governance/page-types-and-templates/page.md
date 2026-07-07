@@ -1,11 +1,11 @@
 ---
 title: Page Types, Front Matter, and Contribution Templates
-status: source_checked
+status: published
 audience: Page owner
 owner: DevRel maintainer
 source_tier: internal_note
 benchmark_status: not_applicable
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 Every page in this wiki is one of seven page types, and each type comes with a fixed front matter block and a template. Use this page to pick the type for a page you are about to write, copy the matching front matter, and fill in the ownership fields before you publish. {% .lead %}

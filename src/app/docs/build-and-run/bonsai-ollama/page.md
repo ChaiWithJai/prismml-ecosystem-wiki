@@ -1,11 +1,11 @@
 ---
 title: Bonsai 8B With Ollama
-status: not_run
+status: published
 audience: DevRel engineer
 owner: Runtime validator
 source_tier: primary_links
 benchmark_status: not_run
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 Ollama is a free desktop tool that runs open-weight language models on your own machine, and Bonsai 8B is PrismML's small 1-bit quantized model. On this page you can import the Bonsai 8B GGUF file into Ollama, run one prompt from the command line and one through the local API, and record what happened. {% .lead %}

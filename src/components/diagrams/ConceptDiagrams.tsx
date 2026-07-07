@@ -443,6 +443,68 @@ function EvaluationConcepts() {
   )
 }
 
+
+function ConstraintLadder() {
+  const lanes = [
+    {
+      label: 'Unconstrained decoding',
+      sub: 'the sampler may pick any token',
+      note: 'Bonsai 8B 1-bit: 0% valid tool calls',
+      tone: 'bad',
+    },
+    {
+      label: 'Grammar-constrained decoding',
+      sub: 'a GBNF grammar masks invalid tokens at every step',
+      note: 'Bonsai 8B 1-bit: 92% pass (community benchmark, 30 cases)',
+      tone: 'good',
+    },
+    {
+      label: 'Harness-constrained inference',
+      sub: 'retrieval shapes the input; the prompt demands abstention; the UI links sources',
+      note: 'our docs chat: no grammar available in the browser, so the harness carries the constraint',
+      tone: 'mid',
+    },
+  ]
+  return (
+    <Fig
+      label="Three places a constraint can live: nowhere, at the sampler as a grammar mask, or around the model as a harness of retrieval, prompt shape, and source links."
+      caption="The capability lives in the weights; the reliability lives in the constraint. A grammar constrains every decoded token to a formal language. A harness constrains what goes in and how the output is checked. Unconstrained 1-bit decoding gets neither, and format discipline is the first thing aggressive quantization degrades."
+    >
+      <svg viewBox="0 0 560 260" className="w-full font-sans">
+        {lanes.map((l, i) => {
+          const y = 18 + i * 80
+          return (
+            <g key={l.label}>
+              <rect
+                x={16}
+                y={y}
+                width={300}
+                height={62}
+                rx={6}
+                strokeWidth={l.tone === 'good' ? 2 : 1}
+                className={l.tone === 'good' ? box.hot : box.cold}
+              />
+              <text x={30} y={y + 24} fontSize={11.5} fontWeight={600} className={l.tone === 'good' ? ink.hot : ink.strong}>
+                {l.label}
+              </text>
+              <text x={30} y={y + 42} fontSize={9.5} className={ink.muted}>
+                {l.sub}
+              </text>
+              <line x1={322} y1={y + 31} x2={342} y2={y + 31} strokeWidth={1.2} className="stroke-slate-300 dark:stroke-slate-600" strokeDasharray="2 3" />
+              <text x={348} y={y + 24} fontSize={9.5} className={ink.strong}>
+                {l.note.split(': ')[0]}
+              </text>
+              <text x={348} y={y + 40} fontSize={9.5} className={l.tone === 'bad' ? 'fill-amber-600 dark:fill-amber-400' : ink.muted}>
+                {l.note.split(': ').slice(1).join(': ')}
+              </text>
+            </g>
+          )
+        })}
+      </svg>
+    </Fig>
+  )
+}
+
 const DIAGRAMS: Record<string, () => React.ReactNode> = {
   'prefill-decode': PrefillDecode,
   'weights-on-disk': WeightsOnDisk,
@@ -452,6 +514,7 @@ const DIAGRAMS: Record<string, () => React.ReactNode> = {
   'feature-stores': FeatureStores,
   'training-alignment': TrainingAlignment,
   'evaluation-concepts': EvaluationConcepts,
+  'constraint-ladder': ConstraintLadder,
 }
 
 export function ConceptDiagram({ name }: { name: string }) {

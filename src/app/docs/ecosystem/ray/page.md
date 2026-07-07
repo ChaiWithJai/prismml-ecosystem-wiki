@@ -1,11 +1,11 @@
 ---
 title: Ray / Anyscale
-status: source_checked
+status: published
 audience: DevRel engineer
 owner: Recipe author
 source_tier: primary_links
 benchmark_status: not_run
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 Ray is an open source Python framework for running data processing, model training, and model serving across many machines. On this page you can see where Ray fits in the supply chain and try its install command. {% .lead %}

@@ -5,8 +5,8 @@ audience: inference-engineer
 pillar: foundational-concept
 book: inference-engineering
 chapter_ref: "Ch. 0, Inference (pp. 17-21)"
-status: draft
-last_reviewed: 2026-07-06
+status: published
+last_reviewed: 2026-07-07
 ---
 
 Production inference is three cooperating layers, and not only GPUs plus weights. The runtime makes one model fast on one GPU-backed instance. The infrastructure scales that model across clusters and clouds while keeping it up. The tooling is the developer abstraction on top of both. When someone says "the model is slow", start by asking which of the three layers owns the problem. {% .lead %}

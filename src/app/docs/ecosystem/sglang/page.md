@@ -1,11 +1,11 @@
 ---
 title: SGLang
-status: source_checked
+status: published
 audience: DevRel engineer
 owner: Runtime validator
 source_tier: primary_links
 benchmark_status: not_run
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 SGLang is an open source server for running large language models on GPUs at high throughput, built by the LMSYS team at Berkeley. On this page you can learn what makes its caching design different, see how it fits next to vLLM and llama.cpp, and find the official install path. {% .lead %}

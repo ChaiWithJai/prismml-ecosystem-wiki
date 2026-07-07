@@ -1,11 +1,11 @@
 ---
 title: "X Discovery Notes: PrismML Signal Queue"
-status: not_verified
+status: published
 audience: Researcher
 owner: Docs librarian
 source_tier: discovery
 benchmark_status: not_applicable
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 An X post about PrismML is a lead, not a fact. This page is the queue of every PrismML claim we found on X, each paired with the official source that could confirm or kill it, and here you can pick up the next claim to verify or add a new one in the same shape. {% .lead %}

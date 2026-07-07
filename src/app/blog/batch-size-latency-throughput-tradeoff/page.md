@@ -5,8 +5,8 @@ audience: inference-engineer
 pillar: foundational-concept
 book: inference-engineering
 chapter_ref: "Ch. 7, sec. 7.2.1 (pp. 186-188)"
-status: draft
-last_reviewed: 2026-07-06
+status: published
+last_reviewed: 2026-07-07
 ---
 
 Bigger batches raise total tokens per second by keeping the GPU busy during memory-bound decode, but each individual user's stream slows down. Continuous batching, also called in-flight batching, swaps requests at the token level to soften that penalty versus static batching. This is the cleanest framing of the serving frontier between latency and throughput. {% .lead %}

@@ -1,11 +1,11 @@
 ---
 title: Audience And Standards
-status: draft
+status: published
 audience: DevRel
 owner: Docs librarian
 source_tier: internal_standard
 benchmark_status: not_applicable
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 This wiki explains the tools that take a small open-weight language model from downloaded weights to a running product, and it is written for people who build and explain AI products. {% .lead %}

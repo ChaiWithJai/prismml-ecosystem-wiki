@@ -5,8 +5,8 @@ audience: researcher
 pillar: foundational-concept
 book: inference-engineering
 chapter_ref: "Ch. 2, sec. 2.2 (pp. 46-49)"
-status: draft
-last_reviewed: 2026-07-06
+status: published
+last_reviewed: 2026-07-07
 ---
 
 LLM inference has two phases. Prefill computes attention over the whole input in parallel and fills the KV cache. Decode then generates the output one token per forward pass. These two phases account for nearly all inference time and resources, so almost every serving technique, from batching to speculation, is an attack on one of them. {% .lead %}

@@ -1,11 +1,11 @@
 ---
 title: Bandwidth Ledger
-status: migrated
+status: published
 audience: Benchmark contributor
 owner: Benchmark owner
 source_tier: course_material
 benchmark_status: not_run
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 A bandwidth ledger is a record that puts a predicted decode speed next to a measured one, so you can see how close a device gets to its physical limit. {% .lead %}

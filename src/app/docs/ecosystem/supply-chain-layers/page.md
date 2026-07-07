@@ -1,11 +1,11 @@
 ---
 title: Supply Chain Layers
-status: draft
+status: published
 audience: DevRel
 owner: Ecosystem librarian
 source_tier: mixed
 benchmark_status: not_applicable
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 The ML supply chain is the chain of tools and decisions that take a small model from raw data to a product running on a real device. On this page you can see the nine layers of that chain, learn what question each layer answers, and find the tools that live in each one. {% .lead %}

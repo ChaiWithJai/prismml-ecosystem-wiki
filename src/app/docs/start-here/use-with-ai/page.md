@@ -1,11 +1,11 @@
 ---
 title: Use These Docs With AI
-status: draft
+status: published
 audience: DevRel
 owner: DevRel maintainer
 source_tier: internal_canonical
 benchmark_status: not_applicable
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 These docs are built for coding agents as much as for people. Point Claude Code, Cursor, or any agent at one URL and it can read every page as clean Markdown. {% .lead %}

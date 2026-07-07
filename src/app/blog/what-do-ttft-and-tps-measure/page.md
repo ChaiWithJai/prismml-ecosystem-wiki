@@ -5,8 +5,8 @@ audience: inference-engineer
 pillar: foundational-concept
 book: inference-engineering
 chapter_ref: "Ch. 1, sec. 1.4 (pp. 35-36)"
-status: draft
-last_reviewed: 2026-07-06
+status: published
+last_reviewed: 2026-07-07
 ---
 
 TTFT measures the compute-bound prefill phase, and TPS measures the bandwidth-bound decode phase. But TPS is an ambiguous term. Perceived per-user TPS, total system TPS, and inter-token latency are three different numbers, and vendors conflate them constantly. Precise terms keep you from buying the wrong optimization. {% .lead %}

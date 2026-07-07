@@ -1,11 +1,11 @@
 ---
 title: Wiki Contract
-status: active
+status: published
 audience: Maintainers
 owner: Documentation PM
 source_tier: internal_standard
 benchmark_status: not_applicable
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 The wiki contract is the checklist a maintainer uses to decide whether a page in this wiki is finished. Use it to accept or reject a delivered page based on evidence, because a site that builds and deploys is not the same as a site whose pages are correct. {% .lead %}

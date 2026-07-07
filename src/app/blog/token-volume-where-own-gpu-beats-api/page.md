@@ -5,8 +5,8 @@ audience: ml-product-team
 pillar: end-user-case-study
 book: inference-engineering
 chapter_ref: "Ch. 1, sec. 1.1 (pp. 26-27); Ch. 7, sec. 7.4.2"
-status: draft
-last_reviewed: 2026-07-06
+status: published
+last_reviewed: 2026-07-07
 ---
 
 There is a computable crossover. Multiply your monthly tokens by the per-token price, and compare that to GPU hours times the rental rate for a quantized model serving the same load, plus engineering time on the dedicated side. For most teams the honest math says stay on the API longer than pride suggests. At sustained high volume it flips decisively. {% .lead %}

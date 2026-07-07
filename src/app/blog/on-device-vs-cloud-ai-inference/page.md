@@ -5,8 +5,8 @@ audience: ml-product-team
 pillar: end-user-case-study
 book: inference-engineering
 chapter_ref: "Ch. 3, sec. 3.5 Local Inference"
-status: draft
-last_reviewed: 2026-07-06
+status: published
+last_reviewed: 2026-07-07
 ---
 
 Local inference wins on four factors: latency, privacy, offline independence, and zero marginal cost. It loses on four others: device capability, thermal limits, hardware fragmentation, and battery drain. Those eight factors are a ready-made scorecard. Run a feature such as meeting transcription through all eight and one factor is usually decisive, which turns a philosophical debate into a checklist. {% .lead %}

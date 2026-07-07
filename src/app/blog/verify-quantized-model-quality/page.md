@@ -5,8 +5,8 @@ audience: ml-product-team
 pillar: foundational-concept
 book: inference-engineering
 chapter_ref: "Ch. 5, sec. 5.1.3 (p. 128)"
-status: draft
-last_reviewed: 2026-07-06
+status: published
+last_reviewed: 2026-07-07
 ---
 
 Production-ready quantization means zero perceptible quality loss, and you verify that three ways: a perplexity comparison, a standard benchmark, and an evaluation on your own domain prompts. The differences should be indistinguishable from run-to-run noise. This is the acceptance test to demand before you ship a cheaper quantized endpoint, and it is cheap enough to run on a laptop. {% .lead %}

@@ -1,11 +1,11 @@
 ---
 title: Wiki Evaluation Rubric
-status: source_checked
+status: published
 audience: Wiki reviewer
 owner: Docs librarian
 source_tier: internal_canonical
 benchmark_status: not_applicable
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 The evaluation rubric is the scoring standard that decides whether a page in this wiki is ready to publish. Use it to score a submitted page, check the hard gates, and assign one review outcome. {% .lead %}

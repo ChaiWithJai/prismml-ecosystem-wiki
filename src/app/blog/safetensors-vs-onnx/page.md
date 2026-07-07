@@ -5,7 +5,7 @@ audience: inference-engineer
 pillar: ecosystem-player
 book: inference-engineering
 chapter_ref: "Ch. 4, secs. 4.2.2-4.2.3 Model File Formats"
-status: draft
+status: published
 last_reviewed: 2026-07-07
 ---
 

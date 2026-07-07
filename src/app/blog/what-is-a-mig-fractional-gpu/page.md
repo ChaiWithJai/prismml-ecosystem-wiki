@@ -5,7 +5,7 @@ audience: ml-product-team
 pillar: ecosystem-player
 book: inference-engineering
 chapter_ref: "Ch. 3, sec. 3.3.2 Multi-Instance GPUs"
-status: draft
+status: published
 last_reviewed: 2026-07-07
 ---
 

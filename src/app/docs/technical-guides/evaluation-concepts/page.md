@@ -1,11 +1,11 @@
 ---
 title: Evaluation For The Deployment Target
-status: source_checked
+status: published
 audience: Benchmark contributor
 owner: Recipe author
 source_tier: primary_links
 benchmark_status: not_run
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 Evaluation is how you check that a model still does its job on the device where it will actually run, not just on a cloud leaderboard. On this page you can pick the right evaluation style for your model, write a task card with an acceptance test, and set up a regression set that survives model and runtime upgrades. {% .lead %}

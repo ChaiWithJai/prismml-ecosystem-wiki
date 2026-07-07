@@ -6,8 +6,8 @@ pillar: foundational-concept
 category: performance
 book: inference-engineering
 chapter_ref: "Ch. 1, sec. 1.4.1 (pp. 36-37)"
-status: draft
-last_reviewed: 2026-07-06
+status: published
+last_reviewed: 2026-07-07
 ---
 
 LLM response times are right-skewed, so mean latency hides the tail outliers that destroy user trust. One in ten requests taking several seconds is a churn problem that is invisible in averages. Measure P50, P90, and P99 separately, and treat driving the tail down as its own workstream. {% .lead %}

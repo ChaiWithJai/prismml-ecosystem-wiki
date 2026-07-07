@@ -5,8 +5,8 @@ audience: inference-engineer
 pillar: foundational-concept
 book: inference-engineering
 chapter_ref: "Ch. 3, sec. 3.1.2 Memory and Caches"
-status: draft
-last_reviewed: 2026-07-06
+status: published
+last_reviewed: 2026-07-07
 ---
 
 VRAM must hold the model weights plus roughly 50 percent headroom for the KV cache and activations, so weights fitting is not enough. Forgetting KV cache headroom is the most common capacity planning failure. It shows up as OOM crashes, or as mysteriously slow inference once your users send long context. {% .lead %}

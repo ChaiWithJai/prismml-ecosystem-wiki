@@ -1,11 +1,11 @@
 ---
 title: Architectures Beyond The Transformer
-status: source_checked
+status: published
 audience: DevRel engineer
 owner: Docs librarian
 source_tier: primary_links
 benchmark_status: not_run
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 State space models and hybrid designs are alternatives to the transformer that trade some recall ability for much lower compute and memory at long context. On this page you can learn why these alternatives exist, how Mamba and Liquid's LFM2 approach the problem, and when you would pick one over a standard transformer for a device with limited memory. {% .lead %}

@@ -5,8 +5,8 @@ audience: ml-product-team
 pillar: ecosystem-player
 book: inference-engineering
 chapter_ref: "Ch. 4, secs. 4.3-4.3.3 Inference Engines"
-status: draft
-last_reviewed: 2026-07-06
+status: published
+last_reviewed: 2026-07-07
 ---
 
 vLLM and SGLang are easy to run, with day zero support for new models and broad hardware coverage. TensorRT-LLM is harder to operate but usually the fastest option on NVIDIA GPUs. The whole decision fits a five-row table that covers performance, ease of use, model support, hardware, and license, and you should make the choice per deployment, not once per team. {% .lead %}

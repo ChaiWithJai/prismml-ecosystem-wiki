@@ -5,7 +5,7 @@ audience: inference-engineer
 pillar: end-user-case-study
 book: inference-engineering
 chapter_ref: "Ch. 6, sec. 6.3.2 (pp. 164-165)"
-status: draft
+status: published
 last_reviewed: 2026-07-07
 ---
 

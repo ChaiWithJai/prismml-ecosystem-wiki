@@ -1,11 +1,11 @@
 ---
 title: Evaluation Harness
-status: draft
+status: published
 audience: Benchmark contributor
 owner: Benchmark owner
 source_tier: internal_standard
 benchmark_status: not_run
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 The evaluation harness is a fixed protocol for measuring how a model actually behaves on a real device. It covers answer quality, speed, memory use, and energy use when you can measure it. On this page you can pick the prompts to run, record your results in a standard report, and check that your report is complete enough for someone else to repeat. {% .lead %}

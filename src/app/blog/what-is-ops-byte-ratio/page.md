@@ -5,7 +5,7 @@ audience: researcher
 pillar: foundational-concept
 book: inference-engineering
 chapter_ref: "Ch. 2, sec. 2.4.1 (p. 62)"
-status: draft
+status: published
 last_reviewed: 2026-07-07
 ---
 

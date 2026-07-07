@@ -1,11 +1,11 @@
 ---
 title: Feature Stores And Data Pipelines
-status: source_checked
+status: published
 audience: DevRel engineer
 owner: Concept guide author
 source_tier: primary_links
 benchmark_status: not_applicable
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 A feature store is a system that computes a data value once, stores it with a timestamp and a key, and serves that same value to both your training jobs and your live agent. On this page you can learn when you need one, pick a platform, and run a checklist that keeps your training data and your serving data in agreement. {% .lead %}

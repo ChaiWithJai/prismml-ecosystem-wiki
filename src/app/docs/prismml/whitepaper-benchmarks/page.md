@@ -1,11 +1,11 @@
 ---
 title: Whitepaper Benchmarks
-status: source_checked
+status: published
 audience: DevRel
 owner: Docs librarian
 source_tier: primary
 benchmark_status: published
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 The 1-bit Bonsai 8B whitepaper reports how a 1.15 GB model scores against full-precision models ten times its size, and how fast and efficiently it runs on real hardware. On this page you will learn what each benchmark measures, what the paper found, and how to reproduce the numbers yourself. {% .lead %}

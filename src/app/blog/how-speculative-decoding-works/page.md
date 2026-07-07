@@ -5,8 +5,8 @@ audience: inference-engineer
 pillar: foundational-concept
 book: inference-engineering
 chapter_ref: "Ch. 5, sec. 5.2 (pp. 129-131)"
-status: draft
-last_reviewed: 2026-07-06
+status: published
+last_reviewed: 2026-07-07
 ---
 
 Decode is limited by memory bandwidth, which leaves compute sitting idle. Speculative decoding uses that idle compute. A small speculator drafts several tokens ahead, and the target model validates all of them in one forward pass. Kiely compares validation to checking a finished sudoku instead of solving one. The catch is that speculation improves tokens per second and inter-token latency only, never time to first token, and only when spare compute exists. {% .lead %}

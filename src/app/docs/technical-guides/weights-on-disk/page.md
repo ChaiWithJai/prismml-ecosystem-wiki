@@ -1,11 +1,11 @@
 ---
 title: Weights On Disk
-status: migrated
+status: published
 audience: DevRel engineer
 owner: Technical writer
 source_tier: course_material
 benchmark_status: inspectable
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 Quantization means storing a model's weights with fewer bits per weight than the precision they were trained in, so the file on disk gets smaller. A "1-bit model" takes this to the extreme and stores each weight as a single sign bit plus a shared scale for its group, so a weight that would take 16 bits in FP16 takes about 1.125 bits on disk. On this page you learn how those bits are laid out in a block and how to decode one block back into weights with a few lines of Python. {% .lead %}

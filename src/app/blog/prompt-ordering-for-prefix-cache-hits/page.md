@@ -5,7 +5,7 @@ audience: ml-product-team
 pillar: foundational-concept
 book: inference-engineering
 chapter_ref: "Ch. 5, sec. 5.3.1 (pp. 137-138)"
-status: draft
+status: published
 last_reviewed: 2026-07-07
 ---
 

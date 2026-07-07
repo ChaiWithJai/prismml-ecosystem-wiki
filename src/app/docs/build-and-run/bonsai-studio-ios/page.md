@@ -1,11 +1,11 @@
 ---
 title: Bonsai Studio on iPhone
-status: not_run
+status: published
 audience: DevRel engineer
 owner: Recipe author
 source_tier: discovery
 benchmark_status: not_run
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 Bonsai Studio is PrismML's iPhone app for Bonsai Image 4B, a small open-weight image model that generates images on the phone itself. On this page you can install the app, generate one image fully on-device, and measure how long it takes. {% .lead %}

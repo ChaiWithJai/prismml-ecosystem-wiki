@@ -5,7 +5,7 @@ audience: inference-engineer
 pillar: end-user-case-study
 book: building-ai-products
 chapter_ref: "Nika, Ch. 1, 'Personalized media' subsection"
-status: draft
+status: published
 last_reviewed: 2026-07-07
 ---
 

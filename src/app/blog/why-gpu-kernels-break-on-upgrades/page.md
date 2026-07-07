@@ -5,7 +5,7 @@ audience: inference-engineer
 pillar: ecosystem-player
 book: inference-engineering
 chapter_ref: "Ch. 4, sec. 4.1.2 CUDA Kernel Selection"
-status: draft
+status: published
 last_reviewed: 2026-07-07
 ---
 

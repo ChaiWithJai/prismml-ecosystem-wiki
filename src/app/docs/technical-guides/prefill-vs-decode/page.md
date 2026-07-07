@@ -1,11 +1,11 @@
 ---
 title: Prefill Versus Decode
-status: migrated
+status: published
 audience: DevRel engineer
 owner: Technical writer
 source_tier: course_material
 benchmark_status: not_run
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 Prefill and decode are the two phases of running a language model. Prefill reads your whole prompt at once, and decode generates the answer one token at a time. On this page you learn why the two phases hit different hardware limits, and how to measure each one so your speed claims are precise. {% .lead %}

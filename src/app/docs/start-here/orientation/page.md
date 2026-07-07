@@ -1,11 +1,11 @@
 ---
 title: Orientation
-status: draft
+status: published
 audience: DevRel
 owner: DevRel maintainer
 source_tier: mixed
 benchmark_status: not_applicable
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 PrismML is a family of small open-weight language models built to run on ordinary hardware such as laptops, phones, and efficient servers. On this page you will learn what the supply chain around those models is, and you will find the fastest route to running one yourself. {% .lead %}

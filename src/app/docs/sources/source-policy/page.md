@@ -1,11 +1,11 @@
 ---
 title: Source Policy
-status: active
+status: published
 audience: Docs librarian
 owner: Source reviewer
 source_tier: internal_standard
 benchmark_status: not_applicable
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 A source is any document, repository, post, or recording that a fact on this wiki comes from, and not every source is strong enough to support a published fact. On this page you can sort a source into one of five tiers and decide whether a claim from it is ready for a public page. {% .lead %}

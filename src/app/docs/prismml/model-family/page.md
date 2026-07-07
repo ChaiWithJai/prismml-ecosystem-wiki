@@ -1,11 +1,11 @@
 ---
 title: PrismML Model Family
-status: partial
+status: published
 audience: DevRel
 owner: PrismML liaison
 source_tier: primary_links
 benchmark_status: source_only
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 PrismML is a company that builds small compressed language and image models, released under the Bonsai name, that you can run on a laptop, a phone, or in a browser. {% .lead %}

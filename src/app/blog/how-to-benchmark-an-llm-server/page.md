@@ -5,8 +5,8 @@ audience: inference-engineer
 pillar: ecosystem-player
 book: inference-engineering
 chapter_ref: "Ch. 4, secs. 4.5-4.5.2 Benchmarking"
-status: draft
-last_reviewed: 2026-07-06
+status: published
+last_reviewed: 2026-07-07
 ---
 
 A good benchmark mirrors production on four axes: sequence lengths, traffic volume and pattern, request contents, and sampling parameters. The best way to get there is to shadow real traffic onto the test system. Then measure a baseline and change one variable at a time. If you tune against unrealistic inputs, the gains disappear in production, and some optimizations conflict, e.g., speculative decoding works against large batches. {% .lead %}

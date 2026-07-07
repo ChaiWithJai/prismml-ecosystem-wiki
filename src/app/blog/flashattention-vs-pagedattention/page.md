@@ -5,8 +5,8 @@ audience: researcher
 pillar: ecosystem-player
 book: inference-engineering
 chapter_ref: "Ch. 2, sec. 2.5 (pp. 67-68)"
-status: draft
-last_reviewed: 2026-07-06
+status: published
+last_reviewed: 2026-07-07
 ---
 
 FlashAttention and PagedAttention are lossless implementation work, not new math. FlashAttention removes redundant memory reads and writes inside the attention kernel. PagedAttention splits the KV cache into pages so it no longer needs one contiguous block of GPU memory. Contrast that with new algorithms like sliding window attention, which trade quality for sub-quadratic complexity. Once you know which category a technique is in, you know whether to expect quality regressions. {% .lead %}

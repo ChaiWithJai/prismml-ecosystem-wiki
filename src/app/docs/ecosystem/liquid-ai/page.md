@@ -1,11 +1,11 @@
 ---
 title: Liquid AI (LFMs)
-status: draft
+status: published
 audience: DevRel engineer
 owner: Docs librarian
 source_tier: primary_links
 benchmark_status: not_run
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 Liquid Foundation Models (LFMs) are a family of small language models from Liquid AI that do not use the standard transformer design, and Liquid builds them to run on small devices such as laptops and phones. On this page you can find the official LFM docs and see how LFMs compare with PrismML Bonsai. {% .lead %}

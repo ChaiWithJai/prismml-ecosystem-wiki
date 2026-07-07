@@ -1,11 +1,11 @@
 ---
 title: Training, Fine-Tuning, And Preference Alignment
-status: source_checked
+status: published
 audience: DevRel engineer
 owner: Recipe author
 source_tier: primary_links
 benchmark_status: not_run
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 Fine-tuning updates a pretrained model on your own data, and preference alignment then steers the model toward outputs people prefer. On this page you pick the right tool for an adaptation job, choose between LoRA and QLoRA, choose between DPO, PPO, and GRPO, format your data correctly, and check the tuned model for regressions before you ship it. {% .lead %}

@@ -5,7 +5,7 @@ audience: researcher
 pillar: ecosystem-player
 book: inference-engineering
 chapter_ref: "Ch. 1, sec. 1.3.3 (pp. 33-35)"
-status: draft
+status: published
 last_reviewed: 2026-07-07
 ---
 

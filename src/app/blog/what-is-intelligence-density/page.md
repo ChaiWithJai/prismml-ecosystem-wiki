@@ -5,8 +5,8 @@ audience: ml-product-team
 pillar: foundational-concept
 book: transcript-theme
 chapter_ref: "Theme 1: Intelligence density (capability per GB/watt/dollar)"
-status: draft
-last_reviewed: 2026-07-06
+status: published
+last_reviewed: 2026-07-07
 ---
 
 Intelligence density measures usable capability per GB of memory, per watt, and per dollar, not raw speed or parameter count. A 3B model that passes your evals on a laptop can be denser than a 70B model behind an API, because density is always relative to a workload, a hardware envelope, and a budget. {% .lead %}

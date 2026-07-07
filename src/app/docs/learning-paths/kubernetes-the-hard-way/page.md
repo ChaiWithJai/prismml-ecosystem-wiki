@@ -1,11 +1,11 @@
 ---
 title: Kubernetes The Hard Way
-status: source_checked
+status: published
 audience: DevRel
 owner: Developer advocate
 source_tier: primary_course
 benchmark_status: not_applicable
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 Kubernetes The Hard Way is a free course that walks you through building a working Kubernetes cluster by hand, one component at a time, from machines and certificates through etcd, the control plane, workers, networking, and smoke tests. Follow this path to learn what sits underneath every production model-serving deployment, so you can explain and debug the stack that runs vLLM, SGLang, or Ray Serve. {% .lead %}

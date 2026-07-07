@@ -1,11 +1,11 @@
 ---
 title: Ollama
-status: source_checked
+status: published
 audience: DevRel engineer
 owner: Runtime validator
 source_tier: primary_links
 benchmark_status: not_run
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 Ollama is a tool that downloads, runs, and serves language models on your own laptop or workstation with one command. On this page you can learn what Ollama does, how it compares to llama.cpp, MLX, and LM Studio, and what we know so far about running Bonsai on it. {% .lead %}

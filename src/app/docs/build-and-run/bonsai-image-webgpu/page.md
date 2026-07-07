@@ -1,11 +1,11 @@
 ---
 title: Bonsai Image In The Browser (WebGPU)
-status: not_run
+status: published
 audience: DevRel engineer
 owner: Recipe author
 source_tier: primary_links
 benchmark_status: not_run
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 Bonsai Image 4B is PrismML's small image generation model, and it can run entirely inside a WebGPU browser with no server. On this page you can load the official demo, generate one image on your own machine, and record how it performed. {% .lead %}

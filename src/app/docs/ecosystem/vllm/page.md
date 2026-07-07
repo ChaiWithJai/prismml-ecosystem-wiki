@@ -1,11 +1,11 @@
 ---
 title: vLLM
-status: source_checked
+status: published
 audience: DevRel engineer
 owner: Runtime validator
 source_tier: primary_links
 benchmark_status: not_run
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 vLLM is an open source engine that serves a language model checkpoint as a high-throughput, OpenAI-compatible API. On this page you can learn what makes it fast, see where it sits among the other tools in this map, and find the primary sources to cite when you explain it. {% .lead %}

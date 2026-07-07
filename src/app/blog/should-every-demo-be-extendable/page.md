@@ -5,7 +5,7 @@ audience: ml-product-team
 pillar: end-user-case-study
 book: transcript-theme
 chapter_ref: "Theme 4: Time-to-value as the docs metric"
-status: draft
+status: published
 last_reviewed: 2026-07-07
 ---
 
@@ -81,4 +81,4 @@ Fourth, read the log and split the total into edit time and search time. Then wr
 - [Running your first inference](/docs/getting-started/first-inference) is the working run you should start from before timing any modification.
 - [How many clicks to first inference? The docs funnel](/blog/clicks-to-first-inference-docs-funnel) applies the same time-to-value metric to the docs path before the demo.
 
-When you can do this, you can audit a demo for extendability and specify the extension points that turn people who run it into people who adopt it.
+When you can do this, you can audit a demo for extendability and specify the extension points that turn people who run it into people who adopt 

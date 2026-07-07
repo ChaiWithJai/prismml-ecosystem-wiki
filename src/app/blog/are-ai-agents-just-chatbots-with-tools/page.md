@@ -5,7 +5,7 @@ audience: researcher
 pillar: end-user-case-study
 book: building-ai-products
 chapter_ref: "Nika, front matter chapter map, Ch. 8 summary"
-status: draft
+status: published
 last_reviewed: 2026-07-07
 ---
 

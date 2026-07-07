@@ -5,7 +5,7 @@ audience: inference-engineer
 pillar: end-user-case-study
 book: both
 chapter_ref: "Nika, Ch. 1, 'Speech' subsection; Kiely, Ch. 6, sec. 6.4"
-status: draft
+status: published
 last_reviewed: 2026-07-07
 ---
 

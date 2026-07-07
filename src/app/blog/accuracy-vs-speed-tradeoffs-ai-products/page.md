@@ -5,7 +5,7 @@ audience: ml-product-team
 pillar: foundational-concept
 book: both
 chapter_ref: "Nika, Ch. 6 preview (chapter map); Kiely, Ch. 5, sec. 5.1"
-status: draft
+status: published
 last_reviewed: 2026-07-07
 ---
 

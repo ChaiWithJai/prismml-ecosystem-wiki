@@ -5,7 +5,7 @@ audience: DevRel
 owner: Runtime validator
 source_tier: primary_links
 benchmark_status: partial
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 The docs chat agent is 1-bit Bonsai 1.7B answering questions about this documentation, running entirely in your browser over WebGPU. On this page you learn how to use it, what quality bar it is held to, and where it will fail you. {% .lead %}

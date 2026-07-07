@@ -5,7 +5,7 @@ audience: ml-product-team
 pillar: ecosystem-player
 book: transcript-theme
 chapter_ref: "Theme 2: End users vs ecosystem members (CNCF-style segmentation)"
-status: draft
+status: published
 last_reviewed: 2026-07-07
 ---
 

@@ -5,7 +5,7 @@ audience: ml-product-team
 pillar: end-user-case-study
 book: building-ai-products
 chapter_ref: "Nika, Ch. 1, 'The Stages of AI Evolution'; 'Traditional AI' subsection"
-status: draft
+status: published
 last_reviewed: 2026-07-07
 ---
 

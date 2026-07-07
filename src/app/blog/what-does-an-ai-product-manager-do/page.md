@@ -5,8 +5,8 @@ audience: ml-product-team
 pillar: end-user-case-study
 book: building-ai-products
 chapter_ref: "Nika, Ch. 1, 'The Role of AI Product Managers'"
-status: draft
-last_reviewed: 2026-07-06
+status: published
+last_reviewed: 2026-07-07
 ---
 
 The AI product manager turns a model capability into a product users trust, and the hard part is rarely the model. Marily Nika opens Building AI-Powered Products with her first speech team, where the recognition already worked and the team still "spent months trying to figure out how to embed this technology into user-facing products". The model is one line item in the shipping plan. The rest of the plan is product work. {% .lead %}

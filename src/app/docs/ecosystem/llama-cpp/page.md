@@ -1,11 +1,11 @@
 ---
 title: llama.cpp
-status: source_checked
+status: published
 audience: DevRel
 owner: Runtime validator
 source_tier: primary_links
 benchmark_status: not_run
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 llama.cpp is an open source C/C++ runtime that runs GGUF model files on your own computer, on CPU, NVIDIA CUDA, or Apple Metal. On this page you can learn what it does, see how to build and run it with Bonsai 8B, and find the full recipe. {% .lead %}

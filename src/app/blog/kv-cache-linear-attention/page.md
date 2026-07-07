@@ -5,8 +5,8 @@ audience: inference-engineer
 pillar: foundational-concept
 book: inference-engineering
 chapter_ref: "Ch. 2, sec. 2.2.3 (pp. 52-53)"
-status: draft
-last_reviewed: 2026-07-06
+status: published
+last_reviewed: 2026-07-07
 ---
 
 Attention is quadratic in sequence length, but the KV cache stores key/value pairs for every prior token so each decode step only computes attention for the new token, which is linear time. The cost is GPU memory. KV cache size is the hidden budget that caps your batch size and context length. {% .lead %}

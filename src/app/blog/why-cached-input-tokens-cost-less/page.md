@@ -5,8 +5,8 @@ audience: ml-product-team
 pillar: foundational-concept
 book: inference-engineering
 chapter_ref: "Ch. 5, sec. 5.3.1 (pp. 136-137)"
-status: draft
-last_reviewed: 2026-07-06
+status: published
+last_reviewed: 2026-07-07
 ---
 
 Prefix caching reuses the KV cache of a shared prompt prefix, so the server skips prefill compute for those tokens entirely. The cheap cache-hit price reflects compute the provider never spent. This means your prompt design maps straight to cost per request on any pay-per-token API, before you change a single model setting. {% .lead %}

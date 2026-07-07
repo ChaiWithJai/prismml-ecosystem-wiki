@@ -1,11 +1,11 @@
 ---
 title: MLX (Apple)
-status: source_checked
+status: published
 audience: DevRel engineer
 owner: Runtime validator
 source_tier: primary_links
 benchmark_status: not_run
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 MLX is Apple's open source machine learning framework for Apple Silicon, and it is the native way to run PrismML Bonsai models on a Mac. On this page you can learn what MLX does, find the Bonsai model files it needs, and decide between MLX and the llama.cpp path. {% .lead %}

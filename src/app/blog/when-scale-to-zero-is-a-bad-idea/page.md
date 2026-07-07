@@ -5,7 +5,7 @@ audience: ml-product-team
 pillar: end-user-case-study
 book: inference-engineering
 chapter_ref: "Ch. 7, sec. 7.2.4 (p. 192)"
-status: draft
+status: published
 last_reviewed: 2026-07-07
 ---
 

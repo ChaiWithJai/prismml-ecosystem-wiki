@@ -1,11 +1,11 @@
 ---
 title: Contributor Guide
-status: source_checked
+status: published
 audience: External contributor
 owner: DevRel maintainer
 source_tier: internal_operating_model
 benchmark_status: not_applicable
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 A contribution to this wiki is a documented fact about small local models or the tools that run them, backed by a source a reviewer can check. This page gives you the checklist a reviewer will apply to your change, so you can pass review on the first attempt. {% .lead %}

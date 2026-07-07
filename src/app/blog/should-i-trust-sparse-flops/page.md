@@ -5,7 +5,7 @@ audience: ml-product-team
 pillar: ecosystem-player
 book: inference-engineering
 chapter_ref: "Ch. 3, sec. 3.1.1 Compute"
-status: draft
+status: published
 last_reviewed: 2026-07-07
 ---
 

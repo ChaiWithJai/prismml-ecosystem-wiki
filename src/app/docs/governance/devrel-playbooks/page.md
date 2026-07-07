@@ -1,11 +1,11 @@
 ---
 title: DevRel Playbooks
-status: draft
+status: published
 audience: DevRel
 owner: DevRel maintainer
 source_tier: mixed
 benchmark_status: not_applicable
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 A DevRel playbook is a short, repeatable procedure for a recurring community task, such as announcing a release or preparing a live demo. {% .lead %}

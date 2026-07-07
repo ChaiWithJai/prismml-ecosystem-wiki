@@ -5,8 +5,8 @@ audience: inference-engineer
 pillar: foundational-concept
 book: inference-engineering
 chapter_ref: "Ch. 2, sec. 2.4.2 (pp. 63-66)"
-status: draft
-last_reviewed: 2026-07-06
+status: published
+last_reviewed: 2026-07-07
 ---
 
 Prefill loads the model weights once and multiplies large matrices, so it performs many operations for every byte it reads from memory. Decode reloads all the weights for each new token to do one small vector times matrix multiply, so it performs few operations per byte. In the book's worked example, a decode attention step reaches about 62 operations per byte, and an H100 can support 295. {% .lead %}

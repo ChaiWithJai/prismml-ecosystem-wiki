@@ -5,7 +5,7 @@ audience: inference-engineer
 pillar: ecosystem-player
 book: inference-engineering
 chapter_ref: "Ch. 5, secs. 5.2.1-5.2.4 (pp. 131-136)"
-status: draft
+status: published
 last_reviewed: 2026-07-07
 ---
 

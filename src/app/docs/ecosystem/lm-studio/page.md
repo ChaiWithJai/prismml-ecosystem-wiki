@@ -1,11 +1,11 @@
 ---
 title: LM Studio
-status: source_checked
+status: published
 audience: DevRel engineer
 owner: Runtime validator
 source_tier: primary_links
 benchmark_status: not_run
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 LM Studio is a desktop app that downloads and runs language models on your own machine through a graphical interface, with no command line. On this page you can learn where LM Studio fits among the local runtimes, walk through a run of PrismML Bonsai in it, and see which facts are still unconfirmed. {% .lead %}

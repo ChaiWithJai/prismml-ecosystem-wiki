@@ -1,11 +1,11 @@
 ---
 title: Bonsai With MLX
-status: not_run
+status: published
 audience: DevRel engineer
 owner: Recipe author
 source_tier: primary_links
 benchmark_status: not_run
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 MLX is Apple's machine learning framework for Apple Silicon Macs, and Bonsai 8B is PrismML's small open-weight language model. On this page you install MLX, download the official 1-bit Bonsai 8B weights, run one prompt on your Mac, and record what you measure. {% .lead %}

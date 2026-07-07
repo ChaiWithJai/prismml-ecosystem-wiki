@@ -1,11 +1,11 @@
 ---
 title: DevRel Operating Model
-status: source_checked
+status: published
 audience: DevRel
 owner: DevRel maintainer
 source_tier: internal_canonical
 benchmark_status: not_applicable
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 The operating model is the set of roles, steps, and schedules that keep this wiki accurate. Use this page when you need to decide who owns a piece of incoming work, how to check it, and when it is ready to publish. {% .lead %}

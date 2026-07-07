@@ -5,8 +5,8 @@ audience: ml-product-team
 pillar: foundational-concept
 book: inference-engineering
 chapter_ref: "Ch. 1, sec. 1.1 (pp. 26-27)"
-status: draft
-last_reviewed: 2026-07-06
+status: published
+last_reviewed: 2026-07-07
 ---
 
 Start on pay-per-token shared APIs. Switch to dedicated GPUs only when one of three forces creates a clear business need: scale economics (your token volume beats per-token pricing), specialization (fine-tuned models, latency or uptime guarantees), or multi-model orchestration. Until one of those applies, inference engineering is not yet on your roadmap. {% .lead %}

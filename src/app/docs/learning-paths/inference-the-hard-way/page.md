@@ -1,11 +1,11 @@
 ---
 title: Inference The Hard Way
-status: migrated
+status: published
 audience: DevRel
 owner: Developer advocate
 source_tier: primary_course
 benchmark_status: partial
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 Inference The Hard Way is a lab course that shows how a language model goes from bytes on disk to tokens on screen. Work through it here to learn where inference spends its time and memory, and to check each claim yourself with bytes on disk, kernel code, cache growth, and benchmark numbers instead of marketing language. {% .lead %}

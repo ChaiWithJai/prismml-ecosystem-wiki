@@ -5,7 +5,7 @@ audience: ml-product-team
 pillar: end-user-case-study
 book: building-ai-products
 chapter_ref: "Nika, 'Closing Thoughts' (front matter)"
-status: draft
+status: published
 last_reviewed: 2026-07-07
 ---
 

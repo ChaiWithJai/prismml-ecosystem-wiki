@@ -5,7 +5,7 @@ audience: DevRel
 owner: DevRel maintainer
 source_tier: internal_canonical
 benchmark_status: partial
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 The docs chat agent is a worked example of the two Hard Way courses: Inference The Hard Way chose the model and the prompt shape, and Kubernetes The Hard Way ruled out every deployment except the browser. This page shows the arithmetic and the decisions so you can reuse them. {% .lead %}

@@ -1,11 +1,11 @@
 ---
 title: Claim Source Matrix
-status: source_checked
+status: published
 audience: Docs librarian
 owner: Source reviewer
 source_tier: primary_links
 benchmark_status: source_only
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 The claim source matrix is the list of facts we publish about PrismML models, each traced to a named source with a verification status. Before you quote a number or a claim about PrismML anywhere on this site, look it up here to see whether it has a verified source. {% .lead %}

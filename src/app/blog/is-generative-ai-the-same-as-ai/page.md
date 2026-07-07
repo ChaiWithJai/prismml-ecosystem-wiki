@@ -5,7 +5,7 @@ audience: ml-product-team
 pillar: foundational-concept
 book: building-ai-products
 chapter_ref: "Nika, Ch. 1, 'The Stages of AI Evolution' and Figure 1-1"
-status: draft
+status: published
 last_reviewed: 2026-07-07
 ---
 

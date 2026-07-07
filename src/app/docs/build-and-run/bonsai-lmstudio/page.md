@@ -1,11 +1,11 @@
 ---
 title: Bonsai With LM Studio
-status: not_run
+status: published
 audience: DevRel engineer
 owner: Recipe author
 source_tier: primary_links
 benchmark_status: not_run
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 LM Studio is a free desktop app that downloads and runs local language models behind a graphical chat interface, with no command line required. On this page you load Bonsai 8B, PrismML's [1-bit small model](https://prismml.com/news/bonsai-8b), into LM Studio, run a prompt with the network disconnected, and save your settings so someone else can repeat the run. {% .lead %}

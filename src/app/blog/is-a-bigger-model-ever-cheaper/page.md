@@ -5,7 +5,7 @@ audience: ml-product-team
 pillar: end-user-case-study
 book: transcript-theme
 chapter_ref: "Theme 1: Intelligence density (capability per GB/watt/dollar)"
-status: draft
+status: published
 last_reviewed: 2026-07-07
 ---
 

@@ -8,6 +8,7 @@ A book club of one, in public. Each post takes an idea from Philip Kiely's Infer
 
 The ideas under every inference decision, from the KV cache to quantization.
 
+- [Can 1-bit models do tool calling?](/blog/can-1-bit-models-do-tool-calling)
 - [Why does batch size trade latency for throughput in LLM serving?](/blog/batch-size-latency-throughput-tradeoff)
 - [How much VRAM do I need to run an LLM?](/blog/how-much-vram-to-run-an-llm)
 - [How does speculative decoding generate more than one token per forward pass?](/blog/how-speculative-decoding-works)

@@ -5,8 +5,8 @@ audience: researcher
 pillar: ecosystem-player
 book: inference-engineering
 chapter_ref: "Ch. 3, sec. 3.5.1 Desktop Inference"
-status: draft
-last_reviewed: 2026-07-06
+status: published
+last_reviewed: 2026-07-07
 ---
 
 Apple's unified memory gives the GPU access to far more memory than consumer NVIDIA cards, up to 512 GB versus 32 GB at the high end, at lower bandwidth. That is a trade between capacity and speed. A huge quantized MoE model fits on a Mac but generates slowly, while an RTX card is fast on anything small enough to fit. {% .lead %}

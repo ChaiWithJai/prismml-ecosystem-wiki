@@ -1,11 +1,11 @@
 ---
 title: Bonsai Image 4B Local Demo
-status: not_run
+status: published
 audience: DevRel engineer
 owner: Recipe author
 source_tier: primary_links
 benchmark_status: not_run
-last_reviewed: 2026-07-06
+last_reviewed: 2026-07-07
 ---
 
 Bonsai Image 4B is PrismML's small text-to-image model, released in 1-bit and ternary variants under the Apache 2.0 license. This page gives you the official sources, the setup outline, and a measurement checklist, so you can clone the demo, follow its README to generate one image on your own machine, and record what you measured so someone else can reproduce your run. {% .lead %}

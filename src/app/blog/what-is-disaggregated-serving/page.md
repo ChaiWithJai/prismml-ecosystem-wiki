@@ -5,7 +5,7 @@ audience: inference-engineer
 pillar: foundational-concept
 book: inference-engineering
 chapter_ref: "Ch. 5, secs. 5.5-5.5.2 (pp. 148-150)"
-status: draft
+status: published
 last_reviewed: 2026-07-07
 ---
 
