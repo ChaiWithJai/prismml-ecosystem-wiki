@@ -68,6 +68,22 @@ function leadSentence(body) {
   return (m ? m[0] : clean).trim()
 }
 
+// Blog posts: globbed from the filesystem, not the nav, so the sidebar stays small.
+import { readdirSync, statSync } from 'node:fs'
+const blogDir = join(ROOT, 'src/app/blog')
+if (existsSync(blogDir)) {
+  const posts = readdirSync(blogDir)
+    .filter((d) => statSync(join(blogDir, d)).isDirectory())
+    .filter((d) => existsSync(join(blogDir, d, 'page.md')))
+    .sort()
+  const links = posts.map((slug) => {
+    const raw = readFileSync(join(blogDir, slug, 'page.md'), 'utf8')
+    const title = raw.match(/^title:\s*["']?(.+?)["']?$/m)?.[1] ?? slug
+    return { title, href: `/blog/${slug}` }
+  })
+  sections.push({ title: 'Blog', links: [{ title: 'Blog index', href: '/blog' }, ...links] })
+}
+
 const banner = `> Full documentation index: ${SITE_URL}/llms.txt\n> Use it to discover every page before exploring further.\n\n`
 const pages = []
 for (const s of sections) {

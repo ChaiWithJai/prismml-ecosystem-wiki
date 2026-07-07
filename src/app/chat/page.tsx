@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { type Metadata } from 'next'
 
 import { DocsChat } from '@/components/DocsChat'
@@ -16,7 +17,9 @@ export default function ChatPage() {
       <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous" />
       <link rel="preconnect" href="https://huggingface.co" crossOrigin="anonymous" />
       <link rel="preconnect" href="https://cdn-lfs.huggingface.co" crossOrigin="anonymous" />
-      <DocsChat />
+      <Suspense>
+        <DocsChat />
+      </Suspense>
     </>
   )
 }

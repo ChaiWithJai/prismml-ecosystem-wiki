@@ -178,6 +178,10 @@ export const navigation = [
     ],
   },
   {
+    title: 'Blog',
+    links: [{ title: 'All posts', href: '/blog' }],
+  },
+  {
     title: 'Contribute',
     links: [
       {

@@ -210,39 +210,72 @@ function SearchResult({
   )
 }
 
+function AskBonsaiRow({ query, onClose }: { query: string; onClose: () => void }) {
+  let router = useRouter()
+  if (!query) return null
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        onClose()
+        router.push(`/chat?q=${encodeURIComponent(query)}`)
+      }}
+      className="group flex w-full items-center gap-2 border-t border-slate-100 px-4 py-3 text-left text-sm text-slate-700 hover:bg-violet-50 dark:border-slate-700/60 dark:text-slate-300 dark:hover:bg-violet-500/10"
+    >
+      <span className="inline-flex h-5 w-5 items-center justify-center rounded bg-violet-600 text-[10px] font-bold text-white">
+        AI
+      </span>
+      <span>
+        Ask Bonsai: <span className="font-semibold text-slate-900 dark:text-white">&ldquo;{query}&rdquo;</span>
+      </span>
+      <span className="ml-auto text-xs text-slate-400 group-hover:text-violet-600 dark:group-hover:text-violet-400">
+        answers in your browser
+      </span>
+    </button>
+  )
+}
+
 function SearchResults({
   autocomplete,
   query,
   collection,
+  onClose,
 }: {
   autocomplete: Autocomplete
   query: string
   collection: AutocompleteCollection<Result>
+  onClose: () => void
 }) {
   if (collection.items.length === 0) {
     return (
-      <p className="px-4 py-8 text-center text-sm text-slate-700 dark:text-slate-400">
-        No results for &ldquo;
-        <span className="wrap-break-word text-slate-900 dark:text-white">
-          {query}
-        </span>
-        &rdquo;
-      </p>
+      <>
+        <p className="px-4 py-8 text-center text-sm text-slate-700 dark:text-slate-400">
+          No results for &ldquo;
+          <span className="wrap-break-word text-slate-900 dark:text-white">
+            {query}
+          </span>
+          &rdquo;
+        </p>
+        <AskBonsaiRow query={query} onClose={onClose} />
+      </>
     )
   }
 
   return (
-    <ul {...autocomplete.getListProps()}>
-      {collection.items.map((result) => (
-        <SearchResult
-          key={result.url}
-          result={result}
-          autocomplete={autocomplete}
-          collection={collection}
-          query={query}
-        />
-      ))}
-    </ul>
+    <>
+      <ul {...autocomplete.getListProps()}>
+        {collection.items.map((result) => (
+          <SearchResult
+            key={result.url}
+            result={result}
+            autocomplete={autocomplete}
+            collection={collection}
+            query={query}
+          />
+        ))}
+      </ul>
+      <AskBonsaiRow query={query} onClose={onClose} />
+    </>
   )
 }
 
@@ -395,6 +428,7 @@ function SearchDialog({
                       autocomplete={autocomplete}
                       query={autocompleteState.query}
                       collection={autocompleteState.collections[0]}
+                      onClose={() => setOpen(false)}
                     />
                   )}
                 </div>

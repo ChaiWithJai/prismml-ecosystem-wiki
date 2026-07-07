@@ -16,6 +16,10 @@ PrismML is a family of small open-weight language models, and Bonsai is its 8B f
 
 {% /quick-links %}
 
+## Ask instead of searching
+
+The fastest way through these docs is to ask them. [Ask the docs](/chat) runs 1-bit Bonsai 1.7B in your own browser over WebGPU: type a question, watch the inference trace show how the answer was made, and follow the source links it cites into the site. Nothing you type leaves your device. It is also the search bar: press the search box anywhere and hand your query to Bonsai from there.
+
 ## Choose how you connect
 
 - **With a coding agent.** Point Claude Code, Cursor, or any agent at [/llms.txt](https://yourwildcard.ai/llms.txt); every page is raw Markdown if you append `.md` to its URL. [Use these docs with AI](/docs/start-here/use-with-ai) has a paste-ready starting prompt.

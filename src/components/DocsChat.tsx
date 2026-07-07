@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 
 type Doc = { title: string; url: string; text: string }
 type Trace = {
@@ -202,8 +203,12 @@ export function DocsChat() {
   const [phase, setPhase] = useState<'idle' | 'loading' | 'ready' | 'generating' | 'unsupported' | 'error'>('idle')
   const [progress, setProgress] = useState('')
   const [dtype, setDtype] = useState('')
+  const [device, setDevice] = useState('')
   const [messages, setMessages] = useState<ChatMsg[]>([])
   const [input, setInput] = useState('')
+  const searchParams = useSearchParams()
+  const wormholeQ = searchParams.get('q')
+  const autoAsked = useRef(false)
   const [errorText, setErrorText] = useState('')
   const workerRef = useRef<Worker | null>(null)
   const docsRef = useRef<Doc[]>([])
@@ -215,6 +220,20 @@ export function DocsChat() {
   useEffect(() => {
     return () => workerRef.current?.terminate()
   }, [])
+
+  // Wormhole: arriving from the search bar with ?q= means the reader already
+  // asked. Start the model without a second click, then ask once it is ready.
+  useEffect(() => {
+    if (wormholeQ && phase === 'idle') start()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [wormholeQ])
+  useEffect(() => {
+    if (wormholeQ && phase === 'ready' && !autoAsked.current) {
+      autoAsked.current = true
+      ask(wormholeQ)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phase, wormholeQ])
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight })
@@ -247,6 +266,7 @@ export function DocsChat() {
         setProgress(m.text)
       } else if (m.type === 'ready') {
         setDtype(m.dtype)
+        setDevice(m.device ?? 'webgpu')
         setPhase('ready')
       } else if (m.type === 'phase') {
         if (m.phase === 'prefill') {
@@ -292,7 +312,12 @@ export function DocsChat() {
 
   function send() {
     const q = input.trim()
-    if (!q || phase !== 'ready') return
+    if (!q) return
+    ask(q)
+  }
+
+  function ask(q: string) {
+    if (phase !== 'ready') return
     setInput('')
     const hits = retrieve(docsRef.current, q)
     const context = hits
@@ -384,6 +409,13 @@ export function DocsChat() {
             className="mt-6 flex-1 space-y-4 overflow-y-auto rounded-lg border border-slate-200 p-4 dark:border-slate-700"
             style={{ minHeight: 320, maxHeight: '55vh' }}
           >
+            {device === 'wasm' && (
+              <div className="rounded-md border border-amber-300 bg-amber-50 p-2 text-xs text-amber-800 dark:border-amber-700 dark:bg-amber-900/20 dark:text-amber-300">
+                WebGPU could not start on this device, so the model is running
+                on a CPU fallback (WASM). It works, but answers will stream
+                noticeably slower than on WebGPU.
+              </div>
+            )}
             {messages.length === 0 && (
               <div className="text-sm text-slate-500 dark:text-slate-400">
                 <p>

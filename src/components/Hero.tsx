@@ -71,14 +71,12 @@ export function Hero() {
                 contribute.
               </p>
               <div className="mt-8 flex flex-wrap gap-4 md:justify-center lg:justify-start">
-                <Button href="/docs/build-and-run/bonsai-llamacpp">
-                  Run Bonsai locally
-                </Button>
+                <Button href="/chat">Ask the docs</Button>
                 <Button
-                  href="/docs/start-here/orientation"
+                  href="/docs/build-and-run/bonsai-llamacpp"
                   variant="secondary"
                 >
-                  Explore the ecosystem
+                  Run Bonsai locally
                 </Button>
               </div>
               <p className="mt-6 text-sm text-slate-400 md:text-center lg:text-left">
