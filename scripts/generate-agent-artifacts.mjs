@@ -117,3 +117,51 @@ writeFileSync(
 )
 
 console.log(`agent artifacts: ${pages.length} md twins, llms.txt (${llms.length} bytes), llms-full.txt (${full.length} bytes), sitemap.xml`)
+
+// --- SEO/AEO enhancement pass over the exported HTML ---
+// The Markdoc loader does not export per-page metadata, so every page ships
+// the global title/description. Rewrite each page's head at build time.
+function esc(s) {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+}
+let enhanced = 0
+for (const p of pages) {
+  const htmlPath = p.href === '/' ? join(OUT, 'index.html') : join(OUT, `${p.route.slice(1)}/index.html`)
+  if (!existsSync(htmlPath)) continue
+  let html = readFileSync(htmlPath, 'utf8')
+  const pageTitle = p.href === '/' ? 'PrismML Developer' : `${p.title} - PrismML Developer`
+  const desc = esc(p.description || 'PrismML Bonsai documentation.')
+  const canonical = `${SITE_URL}${p.route || ''}/`
+  html = html.replace(/<title>[^<]*<\/title>/, `<title>${esc(pageTitle)}</title>`)
+  html = html.replace(
+    /<meta name="description" content="[^"]*"\/>/,
+    `<meta name="description" content="${desc}"/>`,
+  )
+  const lastmodMatch = p.fm.match(/last_reviewed:\s*(\S+)/)
+  const jsonld = {
+    '@context': 'https://schema.org',
+    '@type': p.href === '/' ? 'WebSite' : 'TechArticle',
+    headline: p.title,
+    name: pageTitle,
+    description: p.description,
+    url: canonical,
+    dateModified: lastmodMatch ? lastmodMatch[1] : undefined,
+    isPartOf: p.href === '/' ? undefined : { '@type': 'WebSite', name: 'PrismML Developer', url: SITE_URL },
+    publisher: { '@type': 'Organization', name: 'PrismML Developer (community)', url: SITE_URL },
+  }
+  const headExtras = [
+    `<link rel="canonical" href="${canonical}"/>`,
+    `<link rel="alternate" type="text/markdown" href="${SITE_URL}${p.route || '/index'}.md"/>`,
+    `<meta property="og:title" content="${esc(pageTitle)}"/>`,
+    `<meta property="og:description" content="${desc}"/>`,
+    `<meta property="og:url" content="${canonical}"/>`,
+    `<meta property="og:type" content="article"/>`,
+    `<meta property="og:site_name" content="PrismML Developer"/>`,
+    `<meta name="twitter:card" content="summary"/>`,
+    `<script type="application/ld+json">${JSON.stringify(jsonld)}</script>`,
+  ].join('')
+  html = html.replace('</head>', `${headExtras}</head>`)
+  writeFileSync(htmlPath, html)
+  enhanced += 1
+}
+console.log(`seo pass: ${enhanced} pages got titles, descriptions, canonicals, and JSON-LD`)
