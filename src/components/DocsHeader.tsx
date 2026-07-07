@@ -37,7 +37,11 @@ export function DocsHeader({ frontmatter }: { frontmatter: DocsFrontmatter }) {
     section.links.find((link) => link.href === pathname),
   )
   let { title, status, last_reviewed } = frontmatter
-  let isDraft = status ? DRAFT_STATUSES.has(status) : false
+  let normalizedStatus =
+    typeof status === 'string' ? status.toLowerCase() : undefined
+  let isDraft = normalizedStatus
+    ? DRAFT_STATUSES.has(normalizedStatus)
+    : false
 
   if (!title && !section) {
     return null

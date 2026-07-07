@@ -3,6 +3,7 @@ title: "Why should I report P99 latency instead of average?"
 description: "LLM response times are right-skewed, so mean latency hides tail outliers that destroy trust. Measure P50, P90, and P99, and treat the tail as its own work."
 audience: ml-product-team
 pillar: foundational-concept
+category: performance
 book: inference-engineering
 chapter_ref: "Ch. 1, sec. 1.4.1 (pp. 36-37)"
 status: draft
