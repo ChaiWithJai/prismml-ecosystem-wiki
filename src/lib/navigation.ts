@@ -36,6 +36,7 @@ export const navigation = [
   {
     title: 'PrismML',
     links: [
+      { title: 'Bonsai 27B field guide', href: '/docs/prismml/bonsai-27b' },
       { title: 'Model family', href: '/docs/prismml/model-family' },
       {
         title: 'Whitepaper benchmarks',

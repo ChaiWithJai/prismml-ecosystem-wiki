@@ -2,7 +2,38 @@
 title: Blog
 ---
 
-A book club of one, in public. Each post takes an idea from Philip Kiely's Inference Engineering or Marily Nika's Building AI-Powered Products, tests it against running models on real hardware, and turns it into something you can practice in under 30 minutes. Every post ends with an exercise and a self-check. {% .lead %}
+Ternary Bonsai 27B is the main story here. Twenty-six focused posts connect the public checkpoint and whitepaper to local M4 Pro traces, runtime choices, tool calling, reasoning budgets, fine tuning, and the launch conversation. The broader inference archive follows below. {% .lead %}
+
+## Ternary Bonsai 27B
+
+Start with the [field guide](/docs/prismml/bonsai-27b) or the [ecosystem roundup centered on The Information](/blog/bonsai-27b-ecosystem-reactions).
+
+- [What is Ternary Bonsai 27B?](/blog/what-is-ternary-bonsai-27b)
+- [What Mac do you need for Ternary Bonsai 27B?](/blog/ternary-bonsai-27b-mac-requirements)
+- [How to run Ternary Bonsai 27B with MLX](/blog/run-ternary-bonsai-27b-mlx)
+- [How to serve it through an OpenAI-compatible API](/blog/ternary-bonsai-27b-openai-api)
+- [How many bits per weight does it really use?](/blog/ternary-bonsai-27b-bits-per-weight)
+- [Binary versus ternary weights](/blog/binary-vs-ternary-bonsai-27b)
+- [Why the ideal and packaged model sizes differ](/blog/ternary-bonsai-27b-model-size)
+- [How the KV cache changes memory use](/blog/ternary-bonsai-27b-kv-cache)
+- [Measured M4 Pro performance](/blog/ternary-bonsai-27b-performance-m4-pro)
+- [What the quality benchmarks show](/blog/ternary-bonsai-27b-quality-benchmarks)
+- [Qwen3.6 27B versus Ternary Bonsai 27B](/blog/qwen36-27b-vs-ternary-bonsai-27b)
+- [Using Bonsai 27B with Hermes Agent](/blog/ternary-bonsai-27b-hermes-agent)
+- [Using Bonsai 27B in LM Studio](/blog/ternary-bonsai-27b-lm-studio)
+- [Whether ODS is a tenable runtime path](/blog/ternary-bonsai-27b-ods)
+- [How to approach fine tuning](/blog/fine-tune-ternary-bonsai-27b)
+- [Known limits](/blog/ternary-bonsai-27b-limitations)
+- [The benchmark method](/blog/ternary-bonsai-27b-benchmark-method)
+- [Why reasoning-token budgets matter](/blog/ternary-bonsai-27b-reasoning-token-budget)
+- [How prompt caching changes the result](/blog/ternary-bonsai-27b-prompt-cache)
+- [How to resume an interrupted download](/blog/ternary-bonsai-27b-download-resume)
+- [What we learned on a 24 GB Mac](/blog/ternary-bonsai-27b-24gb-memory)
+- [The structured tool-call test](/blog/ternary-bonsai-27b-tool-calling-test)
+- [Why speed changes between runs](/blog/ternary-bonsai-27b-runtime-variance)
+- [How to compare vendor and local benchmarks](/blog/ternary-bonsai-27b-vendor-vs-local-benchmarks)
+- [How to verify the exact checkpoint](/blog/ternary-bonsai-27b-model-provenance)
+- [What the ecosystem is saying about Bonsai 27B](/blog/bonsai-27b-ecosystem-reactions)
 
 ## Foundational concepts
 

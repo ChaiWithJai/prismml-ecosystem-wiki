@@ -7,7 +7,13 @@ import { HeroBackground } from '@/components/HeroBackground'
 
 // Decorative glows as pure CSS gradients: replaces two ~220 KB PNGs that
 // shipped with priority loading on every visit.
-function BlurGlow({ className, color }: { className: string; color: 'cyan' | 'indigo' }) {
+function BlurGlow({
+  className,
+  color,
+}: {
+  className: string
+  color: 'cyan' | 'indigo'
+}) {
   return (
     <div
       aria-hidden="true"
@@ -24,20 +30,20 @@ function BlurGlow({ className, color }: { className: string; color: 'cyan' | 'in
 }
 
 const codeLanguage = 'bash'
-const code = `$ brew install llama.cpp
+const code = `$ uv tool install mlx-lm
 
-$ curl -LO https://huggingface.co/prism-ml/\\
-    Bonsai-8B-gguf/resolve/main/Bonsai-8B-Q1_0.gguf
-# 1.16 GB. An 8B model that fits in one download.
+$ mlx_lm.server \\
+    --model prism-ml/Ternary-Bonsai-27B-mlx-2bit \\
+    --host 127.0.0.1 --port 8080
 
-$ llama-cli -m Bonsai-8B-Q1_0.gguf \\
-    -p "Why does the KV cache grow?"
-The KV cache grows with context length because...
+# Controlled 4K runs on a 24 GB M4 Pro
+[ TTFT: 14.506 s | Decode: 21.55 tok/s ]
+[ TTFT: 13.383 s | Decode: 22.67 tok/s ]
 
-[ Prompt: 140 t/s | Generation: 65 t/s ]`
+# Exact public package: 8.49 GB`
 
 const tabs = [
-  { name: 'run-bonsai.sh', isActive: true },
+  { name: 'run-bonsai-27b.sh', isActive: true },
   { name: 'measured on a Mac M4 Pro', isActive: false },
 ]
 
@@ -63,20 +69,16 @@ export function Hero() {
             />
             <div className="relative">
               <p className="inline bg-linear-to-r from-violet-300 via-cyan-300 to-emerald-300 bg-clip-text font-display text-5xl tracking-tight text-transparent">
-                Run serious AI on hardware you already own.
+                Ternary Bonsai 27B runs locally on a 24 GB Mac.
               </p>
               <p className="mt-3 text-2xl tracking-tight text-slate-400">
-                The developer guide to PrismML Bonsai and the small-model
-                ecosystem: what to run, how to verify it, and where to
-                contribute.
+                Run the public checkpoint, inspect measured traces, and separate
+                vendor claims from what local tests actually prove.
               </p>
               <div className="mt-8 flex flex-wrap gap-4 md:justify-center lg:justify-start">
                 <Button href="/chat">Ask the docs</Button>
-                <Button
-                  href="/docs/build-and-run/bonsai-llamacpp"
-                  variant="secondary"
-                >
-                  Run Bonsai locally
+                <Button href="/docs/prismml/bonsai-27b" variant="secondary">
+                  Open the 27B field guide
                 </Button>
               </div>
               <p className="mt-6 text-sm text-slate-400 md:text-center lg:text-left">
@@ -166,7 +168,10 @@ export function Hero() {
                         getTokenProps,
                       }) => (
                         <pre
-                          className={clsx(className, 'flex overflow-x-auto pb-6')}
+                          className={clsx(
+                            className,
+                            'flex overflow-x-auto pb-6',
+                          )}
                           style={style}
                         >
                           <code className="px-4">
