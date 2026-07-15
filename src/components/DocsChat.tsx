@@ -52,7 +52,10 @@ const SUGGESTIONS = [
 // site-relative route: strip our hosts and the .md twin suffix.
 function cleanUrl(url: string): string {
   return url
-    .replace(/^https?:\/\/(yourwildcard\.ai|prismml-ecosystem-wiki\.netlify\.app)/, '')
+    .replace(
+      /^https?:\/\/(yourwildcard\.ai|prismml-ecosystem-wiki\.netlify\.app)/,
+      '',
+    )
     .replace(/\.md$/, '')
 }
 
@@ -60,7 +63,8 @@ function chunkCorpus(fullText: string): Doc[] {
   const docs: Doc[] = []
   for (const block of fullText.split('\n\n---\n\n')) {
     const url = block.match(/canonical_url:\s*(\S+)/)?.[1]
-    const title = block.match(/^#\s+(.+)$/m)?.[1] ?? block.match(/title:\s*(.+)/)?.[1]
+    const title =
+      block.match(/^#\s+(.+)$/m)?.[1] ?? block.match(/title:\s*(.+)/)?.[1]
     if (!url || !title) continue
     const body = block
       .replace(/^---[\s\S]*?---\n/, '')
@@ -109,7 +113,12 @@ function retrieve(docs: Doc[], query: string, k = 2): Doc[] {
     .map((s) => ({ ...s.d, text: excerpt(s.d.text, terms, idf) }))
 }
 
-function excerpt(text: string, terms: string[], idf: Record<string, number>, budget = 2400) {
+function excerpt(
+  text: string,
+  terms: string[],
+  idf: Record<string, number>,
+  budget = 2400,
+) {
   const paras = text.split('\n\n').filter((p) => p.trim())
   const scored = paras.map((p, j) => {
     const pl = p.toLowerCase()
@@ -146,18 +155,29 @@ function AnswerText({ text }: { text: string }) {
       const inner = m[1]
       nodes.push(
         href.startsWith('/') ? (
-          <Link key={key++} href={href} className="font-medium text-violet-700 hover:underline dark:text-violet-400">
+          <Link
+            key={key++}
+            href={href}
+            className="font-medium text-violet-700 hover:underline dark:text-violet-400"
+          >
             {inner}
           </Link>
         ) : (
-          <a key={key++} href={href} className="font-medium text-violet-700 hover:underline dark:text-violet-400">
+          <a
+            key={key++}
+            href={href}
+            className="font-medium text-violet-700 hover:underline dark:text-violet-400"
+          >
             {inner}
           </a>
         ),
       )
     } else if (m[3] !== undefined) {
       nodes.push(
-        <code key={key++} className="rounded bg-slate-100 px-1 py-0.5 text-[0.85em] dark:bg-slate-800">
+        <code
+          key={key++}
+          className="rounded bg-slate-100 px-1 py-0.5 text-[0.85em] dark:bg-slate-800"
+        >
           {m[3]}
         </code>,
       )
@@ -171,7 +191,11 @@ function AnswerText({ text }: { text: string }) {
     last = m.index + m[0].length
   }
   if (last < text.length) nodes.push(text.slice(last))
-  return <p className="mt-1 whitespace-pre-wrap text-sm text-slate-800 dark:text-slate-200">{nodes}</p>
+  return (
+    <p className="mt-1 text-sm whitespace-pre-wrap text-slate-800 dark:text-slate-200">
+      {nodes}
+    </p>
+  )
 }
 
 // The inference trace: the visible inference surface is where users learn
@@ -181,45 +205,69 @@ const STAGE_META: { key: Phase; label: string; design: string }[] = [
   {
     key: 'retrieve',
     label: 'Retrieve',
-    design: 'IDF keyword search over every docs page. Rare words weigh more, so "KV" beats "Bonsai".',
+    design:
+      'IDF keyword search over every docs page. Rare words weigh more, so "KV" beats "Bonsai".',
   },
   {
     key: 'assemble',
     label: 'Assemble',
-    design: 'Question first, then short excerpts. Our eval showed the model misses answers when the question comes last.',
+    design:
+      'Question first, then short excerpts. Our eval showed the model misses answers when the question comes last.',
   },
   {
     key: 'prefill',
     label: 'Prefill',
-    design: 'The whole prompt is processed in one parallel pass and written into the KV cache.',
+    design:
+      'The whole prompt is processed in one parallel pass and written into the KV cache.',
   },
   {
     key: 'decode',
     label: 'Decode',
-    design: 'One token per step. Each step reads the KV cache (~112 KB per token) and streams all 290 MB of 1-bit weights through your GPU.',
+    design:
+      'One token per step. Each step reads the KV cache (~112 KB per token) and streams all 290 MB of 1-bit weights through your GPU.',
   },
 ]
 
-function InferenceTrace({ phase, trace, compact }: { phase: Phase; trace: Trace; compact?: boolean }) {
+function InferenceTrace({
+  phase,
+  trace,
+  compact,
+}: {
+  phase: Phase
+  trace: Trace
+  compact?: boolean
+}) {
   const order: Phase[] = ['retrieve', 'assemble', 'prefill', 'decode', 'done']
   const activeIdx = order.indexOf(phase)
   const value = (key: Phase): string => {
     if (key === 'retrieve')
-      return trace.sources.length ? trace.sources.map((s) => s.title).join(', ') : 'no matching pages'
-    if (key === 'assemble') return `${trace.contextChars.toLocaleString()} chars of excerpts`
+      return trace.sources.length
+        ? trace.sources.map((s) => s.title).join(', ')
+        : 'no matching pages'
+    if (key === 'assemble')
+      return `${trace.contextChars.toLocaleString()} chars of excerpts`
     if (key === 'prefill')
       return trace.inputTokens
         ? `${trace.inputTokens.toLocaleString()} tokens${trace.ttftMs ? ` -> first token in ${(trace.ttftMs / 1000).toFixed(1)}s` : ''}`
         : 'waiting'
     if (key === 'decode')
-      return trace.tokensPerSecond ? `${trace.tokensPerSecond.toFixed(0)} tok/s on your GPU` : 'streaming'
+      return trace.tokensPerSecond
+        ? `${trace.tokensPerSecond.toFixed(0)} tok/s on your GPU`
+        : 'streaming'
     return ''
   }
   return (
-    <div className={compact ? 'mt-2' : 'mt-3 rounded-lg border border-slate-200 p-3 dark:border-slate-700'}>
+    <div
+      className={
+        compact
+          ? 'mt-2'
+          : 'mt-3 rounded-lg border border-slate-200 p-3 dark:border-slate-700'
+      }
+    >
       <ol className="space-y-2">
         {STAGE_META.map((s, i) => {
-          const state = i < activeIdx ? 'done' : i === activeIdx ? 'active' : 'pending'
+          const state =
+            i < activeIdx ? 'done' : i === activeIdx ? 'active' : 'pending'
           return (
             <li key={s.key} className="flex gap-2 text-xs">
               <span
@@ -231,14 +279,27 @@ function InferenceTrace({ phase, trace, compact }: { phase: Phase; trace: Trace;
                       : 'mt-0.5 h-2 w-2 shrink-0 rounded-full bg-slate-300 dark:bg-slate-600'
                 }
               />
-              <span className={state === 'pending' ? 'text-slate-400 dark:text-slate-500' : 'text-slate-600 dark:text-slate-300'}>
+              <span
+                className={
+                  state === 'pending'
+                    ? 'text-slate-400 dark:text-slate-500'
+                    : 'text-slate-600 dark:text-slate-300'
+                }
+              >
                 <span className="font-semibold">{s.label}.</span>{' '}
                 {state !== 'pending' && (
-                  <span className="text-violet-700 dark:text-violet-400" style={{ fontVariantNumeric: 'tabular-nums' }}>
+                  <span
+                    className="text-violet-700 dark:text-violet-400"
+                    style={{ fontVariantNumeric: 'tabular-nums' }}
+                  >
                     {value(s.key)}
                   </span>
                 )}{' '}
-                {!compact && <span className="text-slate-500 dark:text-slate-400">{s.design}</span>}
+                {!compact && (
+                  <span className="text-slate-500 dark:text-slate-400">
+                    {s.design}
+                  </span>
+                )}
               </span>
             </li>
           )
@@ -246,14 +307,22 @@ function InferenceTrace({ phase, trace, compact }: { phase: Phase; trace: Trace;
       </ol>
       {phase === 'done' && (
         <p className="mt-3 border-t border-slate-200 pt-2 text-xs text-slate-500 dark:border-slate-700 dark:text-slate-400">
-          <span className="font-semibold text-violet-700 dark:text-violet-400">Intelligence density: 2.832 per GB.</span>{' '}
-          The whitepaper's benchmark of capability per gigabyte; 1-bit Bonsai 1.7B leads every model it was compared
-          against.{' '}
-          <Link href="/docs/prismml/whitepaper-benchmarks" className="font-medium underline">
+          <span className="font-semibold text-violet-700 dark:text-violet-400">
+            Intelligence density: 2.832 per GB.
+          </span>{' '}
+          The whitepaper&apos;s benchmark of capability per gigabyte; 1-bit
+          Bonsai 1.7B leads every model it was compared against.{' '}
+          <Link
+            href="/docs/prismml/whitepaper-benchmarks"
+            className="font-medium underline"
+          >
             See the benchmark
           </Link>{' '}
           &middot;{' '}
-          <Link href="/docs/learning-paths/designing-the-docs-chat" className="font-medium underline">
+          <Link
+            href="/docs/learning-paths/designing-the-docs-chat"
+            className="font-medium underline"
+          >
             Extend this demo
           </Link>
         </p>
@@ -304,12 +373,19 @@ export function DocsChat() {
   }, [state, wormholeQ])
 
   useEffect(() => {
-    scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' })
+    scrollRef.current?.scrollTo({
+      top: scrollRef.current.scrollHeight,
+      behavior: 'smooth',
+    })
   }, [messages, liveTrace])
 
   function queueAsk(q: string) {
     queuedAsk.current = q
-    setMessages((prev) => [...prev, { role: 'user', content: q }, { role: 'assistant', content: '' }])
+    setMessages((prev) => [
+      ...prev,
+      { role: 'user', content: q },
+      { role: 'assistant', content: '' },
+    ])
   }
 
   async function begin() {
@@ -350,7 +426,10 @@ export function DocsChat() {
         }
       } else if (m.type === 'phase') {
         if (m.phase === 'prefill') {
-          pendingTrace.current = { ...pendingTrace.current, inputTokens: m.inputTokens }
+          pendingTrace.current = {
+            ...pendingTrace.current,
+            inputTokens: m.inputTokens,
+          }
           setLivePhase('prefill')
         } else if (m.phase === 'decode') {
           pendingTrace.current = { ...pendingTrace.current, ttftMs: m.ttftMs }
@@ -394,7 +473,9 @@ export function DocsChat() {
   // queued asks already pushed theirs when the reader typed them.
   function runAsk(q: string, push: boolean) {
     const hits = retrieve(docsRef.current, q)
-    const context = hits.map((h) => `### ${h.title} (${h.url})\n${h.text}`).join('\n\n')
+    const context = hits
+      .map((h) => `### ${h.title} (${h.url})\n${h.text}`)
+      .join('\n\n')
     pendingTrace.current = {
       sources: hits.map((h) => ({ title: h.title, url: h.url })),
       contextChars: context.length,
@@ -407,12 +488,20 @@ export function DocsChat() {
       .slice(-4)
       .map((m) => ({ role: m.role, content: m.content }))
     if (push) {
-      setMessages((prev) => [...prev, { role: 'user', content: q }, { role: 'assistant', content: '' }])
+      setMessages((prev) => [
+        ...prev,
+        { role: 'user', content: q },
+        { role: 'assistant', content: '' },
+      ])
     }
     setState('generating')
     workerRef.current?.postMessage({
       type: 'generate',
-      messages: [{ role: 'system', content: SYSTEM_PROMPT }, ...history, { role: 'user', content: userMsg }],
+      messages: [
+        { role: 'system', content: SYSTEM_PROMPT },
+        ...history,
+        { role: 'user', content: userMsg },
+      ],
     })
   }
 
@@ -431,25 +520,38 @@ export function DocsChat() {
     // generating: the input is disabled, so this branch never fires
   }
 
-  const chatVisible = state === 'loading' || state === 'ready' || state === 'generating'
-  const inputEnabled = state === 'invite' || state === 'ready' || (state === 'loading' && !queuedAsk.current)
+  const chatVisible =
+    state === 'loading' || state === 'ready' || state === 'generating'
+  const inputEnabled =
+    state === 'invite' ||
+    state === 'ready' ||
+    (state === 'loading' && !queuedAsk.current)
 
   return (
     <div className="mx-auto flex h-full max-w-3xl flex-col px-4 py-8">
-      <h1 className="font-display text-3xl tracking-tight text-slate-900 dark:text-white">Ask the docs</h1>
+      <h1 className="font-display text-3xl tracking-tight text-slate-900 dark:text-white">
+        Ask the docs
+      </h1>
       <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-        1-bit Bonsai 1.7B answers from these docs, running entirely in your browser over WebGPU. Nothing you type
-        leaves your device.{' '}
-        <Link href="/docs/build-and-run/docs-chat" className="font-medium text-violet-700 dark:text-violet-400">
+        1-bit Bonsai 1.7B answers from these docs, running entirely in your
+        browser over WebGPU. Nothing you type leaves your device.{' '}
+        <Link
+          href="/docs/build-and-run/docs-chat"
+          className="font-medium text-violet-700 dark:text-violet-400"
+        >
           How it works
         </Link>
       </p>
 
       {state === 'unsupported' && (
         <div className="mt-8 rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-amber-800 dark:border-amber-700 dark:bg-amber-900/20 dark:text-amber-300">
-          This browser does not expose WebGPU, which the chat needs to run the model locally. Recent Chrome, Edge, or
-          Safari works. You can still read everything by hand, or point a coding agent at{' '}
-          <Link href="/docs/start-here/use-with-ai" className="font-medium underline">
+          This browser does not expose WebGPU, which the chat needs to run the
+          model locally. Recent Chrome, Edge, or Safari works. You can still
+          read everything by hand, or point a coding agent at{' '}
+          <Link
+            href="/docs/start-here/use-with-ai"
+            className="font-medium underline"
+          >
             the agent pathway
           </Link>
           .
@@ -458,9 +560,12 @@ export function DocsChat() {
 
       {state === 'error' && (
         <div className="mt-8 rounded-lg border border-red-300 bg-red-50 p-4 text-sm text-red-800 dark:border-red-800 dark:bg-red-900/20 dark:text-red-300">
-          The model could not start: {errorText}. A page refresh sometimes clears a stuck GPU context. If it keeps
-          failing,{' '}
-          <Link href="/docs/contribute/contributor-guide" className="font-medium underline">
+          The model could not start: {errorText}. A page refresh sometimes
+          clears a stuck GPU context. If it keeps failing,{' '}
+          <Link
+            href="/docs/contribute/contributor-guide"
+            className="font-medium underline"
+          >
             report it with your browser and GPU
           </Link>
           .
@@ -470,8 +575,9 @@ export function DocsChat() {
       {state === 'invite' && messages.length === 0 && (
         <div className="mt-6 rounded-lg border border-slate-200 p-4 text-sm text-slate-500 dark:border-slate-700 dark:text-slate-400">
           <p>
-            Ask anything below — the first question also downloads the 290 MB model (one time; cached after). These
-            are the gold test cases the agent is benchmarked on:
+            Ask anything below — the first question also downloads the 290 MB
+            model (one time; cached after). These are the gold test cases the
+            agent is benchmarked on:
           </p>
           <ul className="mt-2 space-y-1">
             {SUGGESTIONS.map((s) => (
@@ -493,17 +599,24 @@ export function DocsChat() {
         <div
           ref={scrollRef}
           className="mt-6 flex-1 space-y-4 overflow-y-auto rounded-lg border border-slate-200 p-4 dark:border-slate-700"
-          style={{ minHeight: messages.length ? undefined : 120, maxHeight: '55vh' }}
+          style={{
+            minHeight: messages.length ? undefined : 120,
+            maxHeight: '55vh',
+          }}
         >
           {device === 'wasm' && (
             <div className="rounded-md border border-amber-300 bg-amber-50 p-2 text-xs text-amber-800 dark:border-amber-700 dark:bg-amber-900/20 dark:text-amber-300">
-              WebGPU could not start on this device, so the model is running on a CPU fallback (WASM). It works, but
-              answers will stream noticeably slower than on WebGPU.
+              WebGPU could not start on this device, so the model is running on
+              a CPU fallback (WASM). It works, but answers will stream
+              noticeably slower than on WebGPU.
             </div>
           )}
           {state === 'ready' && messages.length === 0 && (
             <div className="text-sm text-slate-500 dark:text-slate-400">
-              <p>Model loaded ({dtype === 'q1' ? '1-bit' : dtype} build). Try one:</p>
+              <p>
+                Model loaded ({dtype === 'q1' ? '1-bit' : dtype} build). Try
+                one:
+              </p>
               <ul className="mt-2 space-y-1">
                 {SUGGESTIONS.map((s) => (
                   <li key={s}>
@@ -521,17 +634,20 @@ export function DocsChat() {
           )}
           {messages.map((m, i) => {
             const isLast = i === messages.length - 1
-            const isWaitingBubble = m.role === 'assistant' && !m.content && isLast
+            const isWaitingBubble =
+              m.role === 'assistant' && !m.content && isLast
             return (
               <div key={i}>
-                <p className="text-xs font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-500">
+                <p className="text-xs font-semibold tracking-wide text-slate-400 uppercase dark:text-slate-500">
                   {m.role === 'user' ? 'You' : 'Bonsai 1.7B'}
                 </p>
                 {m.content ? (
                   m.role === 'assistant' ? (
                     <AnswerText text={m.content} />
                   ) : (
-                    <p className="mt-1 whitespace-pre-wrap text-sm text-slate-800 dark:text-slate-200">{m.content}</p>
+                    <p className="mt-1 text-sm whitespace-pre-wrap text-slate-800 dark:text-slate-200">
+                      {m.content}
+                    </p>
                   )
                 ) : isWaitingBubble && state === 'loading' ? (
                   <div className="mt-1 text-sm text-slate-500 dark:text-slate-400">
@@ -547,7 +663,10 @@ export function DocsChat() {
                         />
                       </div>
                     )}
-                    <p className="mt-1 text-xs">Your question is queued; it fires the moment the model is warm.</p>
+                    <p className="mt-1 text-xs">
+                      Your question is queued; it fires the moment the model is
+                      warm.
+                    </p>
                   </div>
                 ) : (
                   <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
@@ -560,7 +679,10 @@ export function DocsChat() {
                     {m.trace.sources.map((s, j) => (
                       <span key={s.url}>
                         {j > 0 && ' · '}
-                        <Link href={s.url} className="font-medium text-violet-700 hover:underline dark:text-violet-400">
+                        <Link
+                          href={s.url}
+                          className="font-medium text-violet-700 hover:underline dark:text-violet-400"
+                        >
                           {s.title}
                         </Link>
                       </span>
@@ -571,7 +693,9 @@ export function DocsChat() {
                   <details className="mt-1">
                     <summary className="cursor-pointer text-xs font-medium text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300">
                       How this answer was made
-                      {m.trace.tokensPerSecond ? ` — ${m.trace.tokensPerSecond.toFixed(0)} tok/s` : ''}
+                      {m.trace.tokensPerSecond
+                        ? ` — ${m.trace.tokensPerSecond.toFixed(0)} tok/s`
+                        : ''}
                     </summary>
                     <InferenceTrace phase="done" trace={m.trace} />
                   </details>
@@ -579,7 +703,9 @@ export function DocsChat() {
               </div>
             )
           })}
-          {state === 'generating' && liveTrace && <InferenceTrace phase={livePhase} trace={liveTrace} />}
+          {state === 'generating' && liveTrace && (
+            <InferenceTrace phase={livePhase} trace={liveTrace} />
+          )}
         </div>
       )}
 
@@ -614,8 +740,8 @@ export function DocsChat() {
             </button>
           </form>
           <p className="mt-2 text-xs text-slate-400 dark:text-slate-500">
-            A 1.7B model can misread things. Every answer links its source pages; check them before you quote a
-            number.
+            A 1.7B model can misread things. Every answer links its source
+            pages; check them before you quote a number.
           </p>
         </>
       )}
